@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
   <head>
-    <title>Angular QuickStart</title>
+    <base href="/">
+    <title>Movieflakes.com</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="app/styles/w3.css" rel="stylesheet">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -14,12 +20,19 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
     <script src="systemjs.config.js"></script>
+    
     <script>
       System.import('app').catch(function(err){ console.error(err); });
     </script>
+
   </head>
 
-  <body>
-    <my-app>Loading AppComponent content here ...</my-app>
+  <body style="
+    height: 100%; 
+    background: url('app/images/filmstrip-1626954.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;">
+    <my-app>Loading ...</my-app>
   </body>
 </html>

@@ -1,0 +1,62 @@
+<div class="container carousel-container">
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="600000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+      <li *ngFor="let m of onAirMovies; let i = index;" data-target="#myCarousel" [attr.data-slide-to]="i" [attr.class]="i==0 && 'active' || ''   ">
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div *ngFor="let m of onAirMovies; let i = index;" [attr.class]="i==0 && 'item active' || 'item'">
+      <div class="embed-responsive embed-responsive-16by9">
+            <iframe [src]="m.trailer | safe" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <!--<div class="carousel-caption">
+        <h3>{{m.title}}</h3>
+      </div>-->
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+    <!--<div class="row text-center">
+        <span class="videoCatHeader">ON AIR</span>
+    </div>
+    <div class="row text-center">
+        <div *ngFor="let m of onAirMovies; let i = index;">
+            <div *ngIf="i%3==0" class="clearfix"></div>
+            <div class="col-md-4 thumbnailcell">
+                <a href="#" (click)="videoThumbnailClick(m.id)" >
+                    <img [src]="m.image" [alt]="m.title" class="videothumbnail">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row text-center">
+        <span class="videoCatHeader">COMING SOON</span>
+    </div>
+    <div class="row text-center">
+        <div *ngFor="let m of comingSoonMovies; let i = index;">
+            <div *ngIf="i%3==0" class="clearfix"></div>
+            <div class="col-md-4 thumbnailcell">
+                <a href="#" (click)="videoThumbnailClick(m.id)" >
+                    <img [src]="m.image" [alt]="m.title" class="videothumbnail">
+                </a>
+            </div>
+        </div>
+    </div>-->
+</div>

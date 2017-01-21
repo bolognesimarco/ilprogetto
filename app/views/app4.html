@@ -1,0 +1,99 @@
+<style>
+@keyframes onair {
+	from {color: red;}
+	to {color: orange;}
+}
+@keyframes cominSoon {
+	from {color: green;}
+	to {color: lightseagreen;}
+}
+.onairLabel {
+	animation-name: onair;
+}
+
+.comingSoonLabel {
+	animation-name: cominSoon;
+}
+.movieCatLabel {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+	font-size: 5vmin;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+</style>
+
+<div class="container-fluid" style="height: 100%; background: url('app/images/bckgr_stars_2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size:cover;">
+<div class="row text-center" style="height: 100px; padding-top: 2vmin;">
+<span style="color: white; font-weight: 900; font-size: 10vmin; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">MOVIEFLAKES</span>
+</div>
+<div class="row">
+
+	<div class="col-md-2 col-sm-3 col-xs-1"></div>
+	<div class="col-md-8 col-sm-6 col-xs-10" style="padding: 0px;background-color: black;">
+
+<div class="row" *ngIf="onair">
+	<div class="col-md-12">
+		<table style="width: 100%;">
+			<tr>
+				<td style="width: 20%;"></td>
+				<td style="width: 60%; text-align: center;"><span class="movieCatLabel onairLabel">On Air</span></td>
+				<td class="text-right" style="width: 20%;">
+					<button type="button" (click)="goToComingSoon()" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-arrow-right"></span>
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="row" *ngIf="comingsoon">
+	<div class="col-md-12">
+		<table style="width: 100%;">
+			<tr>
+				<td class="text-left" style="width: 20%;">
+					<button type="button" (click)="goToOnAir()" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+					</button></td>
+				<td style="width: 60%; text-align: center;"><span class="movieCatLabel comingSoonLabel text-center">Coming Soon</span></td>
+				<td style="width: 20%;"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="row" >
+	<div class="col-md-12">
+		<nav class="navbar navbar-default navbar-inverse">
+			<div class="container-fluid">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+							  <div class="nav navbar-nav" style="white-space: nowrap;overflow: auto;">
+								<a *ngFor="let m of movies" href="#" (click)="videoThumbnailClick(m.id)" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<img [src]="m.image" [alt]="m.title" style="max-width: 100px; height: auto; border-radius: 25px;">
+								</a>
+							  </div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>
+<div class="embed-responsive embed-responsive-16by9">
+	<iframe [src]="videoUrl | safe" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+</div>
+<div class="col-md-2 col-sm-3 col-xs-1"></div>
+
+</div>
+<div class="row" style="height: 100px"></div>
+</div>

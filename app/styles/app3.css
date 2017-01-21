@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900|Montez);
+@import url(https://fonts.googleapis.com/css?family=Lemonada);
+
+.header-row {
+    height: 100px;
+    color: greenyellow;
+    font-size: 50px;
+    font-family: 'Lemonada', cursive;
+}
+
+.carousel-container {
+     max-width: 60%;
+}
+
+@media only screen and (max-width: 400px) {
+
+    .carousel-container {
+        max-width: 90%;
+    }
+
+    .header-row {
+        height: 50px;
+        font-size: 25px;
+    }
+
+    .videoCatHeader {
+        font-size: 25px;
+    }
+
+}
+
+.videoCatHeader {
+    font-family: 'Lemonada', cursive;
+    font-size: 50px;
+    color: tomato;
+}
+
+.videothumbnail {
+    width: 100%; 
+    height: auto; 
+    border-radius: 25px;
+}
+
+.thumbnailcell {
+     height: 100%;
+     padding-bottom: 5px;
+}
+
+
+/* This parent can be any width and height */
+.block {
+  text-align: center;
+  /* May want to do this if there is risk the container may be narrower than the element inside */
+  white-space: nowrap;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can also be of any width and height */ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+}

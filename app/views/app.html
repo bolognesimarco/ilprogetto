@@ -1,0 +1,85 @@
+<div class="container main-page">
+
+    <div class="row header-container">
+
+        <div class="col-sm-2 col-xs-4">
+            <img src="app/images/mf2.png" class="logo">
+        </div>
+
+        <div class="col-sm-4 hidden-xs">
+            <input type="text" style="width:200px" placeholder="Cosa cerchi?">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+
+        <div class="col-sm-3 col-md-offset-3 col-xs-8 text-right">
+            <img src="app/images/cart.png" class="icons">
+            <img src="app/images/likefacebook.jpg" class="icons">
+            <img src="app/images/twitter.jpg" class="icons">
+            <img src="app/images/instagram.jpg" class="icons">
+        </div>
+
+    </div>
+    
+    <div class="row minisearch-container hidden-sm hidden-md hidden-lg">
+        <div class="col-xs-12">
+            <input type="text" style="width:200px" placeholder="Cosa cerchi?">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="pull-left navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="menu-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">FILM</a></li>
+                    <li><a href="#">PRODOTTI</a></li>
+                    <li><a href="#">NOVITA'</a></li>
+                    <li><a href="#">OFFERTE SPECIALI</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+
+    </nav>
+    
+    
+    <div class="carousel-container">
+        <movie-carousel></movie-carousel>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Star Wars Highlights<span class="pull-right">Show All</span></div>
+            <div class="panel-body">
+            
+                <div class="row">
+                    <div class="offers-container">
+                        <showcase *ngFor="let jesimo of firstRowItems; let j=index;" [item]="firstRowItems[j]" [parts]="firstRowItems.length"></showcase>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="offers-container">
+                        <showcase *ngFor="let iesimo of secondRowItems; let i=index;" [item]="secondRowItems[i]" [parts]="secondRowItems.length"></showcase>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    
+        
+    <div class="row">
+        dddd
+    </div>
+
+</div>

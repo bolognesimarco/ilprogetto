@@ -1,0 +1,16 @@
+<div class="mf-container">
+
+    <div class="w3-content w3-display-container">
+
+        <a class="w3-btn-floating w3-hover-dark-grey w3-display-left" (click)="plusDivs(-1)">&#10094;</a>
+        <a class="w3-btn-floating w3-hover-dark-grey w3-display-right" (click)="plusDivs(1)">&#10095;</a>
+
+        <div *ngFor="let m of movies; let i=index;" class="w3-display-container" [style.display]="selectedIndex==i && 'block' || 'none'">
+            <img [src]="getUrl(i)" style="width: 100%;">
+        </div>
+
+
+
+    </div>
+
+</div>
