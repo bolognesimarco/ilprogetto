@@ -4,6 +4,7 @@ export class ShopItem {
         public name: string,
         public images: Array<String>,
         public description: string,
-        public price: number
+        public price: number,
+        public movie: number
     ) {}
 }
