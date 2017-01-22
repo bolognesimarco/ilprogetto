@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output, ElementRef } from '@angular/core';
 import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
 
@@ -11,8 +11,8 @@ import { MovieService } from '../../services/movie.service';
 export class MovieCarousel  {
 
     public movies: Array<Movie> = this.movieService.getMovies();
-
-    constructor(private movieService: MovieService) {
+    public showTrailer = false;
+    constructor(private movieService: MovieService, private el: ElementRef) {
         this.showDivs(0);
     }
     
@@ -42,4 +42,5 @@ export class MovieCarousel  {
             return this.movies[index].image;
         }
     }
+    
 } 

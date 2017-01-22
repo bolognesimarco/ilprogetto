@@ -41,6 +41,16 @@
     padding: 10px;
 }
 
+.panel-heading {
+    background-color: lightsteelblue;
+}
+
+.panel-body {
+    border: solid 2px lightsteelblue;
+    border-top: none;
+}
+
+
 @media only screen and (max-width: 1000px) {
     .main-page {
         width: 100%;
@@ -59,6 +69,9 @@
     }
     .icons {
         height: 25px;
+    }
+    .panel-heading {
+        font-size: smaller;
     }
     
 }

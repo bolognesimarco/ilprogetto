@@ -58,22 +58,17 @@
         <movie-carousel></movie-carousel>
     </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">Star Wars Highlights<span class="pull-right"><a href="#">Show All</a></span></div>
-            <div class="panel-body">
-            
-                <div class="row">
-                    <div class="offers-container">
-                        <showcase *ngFor="let jesimo of firstRowItems; let j=index;" [item]="firstRowItems[j]" [parts]="firstRowItems.length"></showcase>
-                    </div>
+    <div *ngFor="let showcaseKey of showcasesKeys; let s=index;" class="panel panel-default">
+        <div class="panel-heading">{{showcaseKey}}
+            <span class="pull-right hidden-xs"><a href="#">Show All</a></span>
+            <span class="pull-right glyphicon glyphicon-sunglasses hidden-sm hidden-md hidden-lg" aria-hidden="true"></span>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="offers-container">
+                    <showcase *ngFor="let jesimo of showcases.get(showcaseKey); let j=index;" [item]="jesimo" [parts]="showcases.get(showcaseKey).length"></showcase>
                 </div>
-                
-                <div class="row">
-                    <div class="offers-container">
-                        <showcase *ngFor="let iesimo of secondRowItems; let i=index;" [item]="secondRowItems[i]" [parts]="secondRowItems.length"></showcase>
-                    </div>
-                </div>
-
+            </div>
         </div>
     </div>
     

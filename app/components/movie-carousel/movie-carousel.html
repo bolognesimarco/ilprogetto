@@ -6,11 +6,15 @@
         <a class="w3-btn-floating w3-hover-dark-grey w3-display-right" (click)="plusDivs(1)">&#10095;</a>
 
         <div *ngFor="let m of movies; let i=index;" class="w3-display-container" [style.display]="selectedIndex==i && 'block' || 'none'">
-            <img [src]="getUrl(i)" style="width: 100%;">
+            <!--<button data-toggle="modal" (click)="openTrailer(getVideoUrl(i))" data-target="#trailermodal" data-movieurl="getVideoUrl(i)" type="button" class="btn">-->
+                <img [src]="getUrl(i)" style="width: 100%;" >
+            <!--</button>-->
         </div>
 
 
 
     </div>
+
+
 
 </div>

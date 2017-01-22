@@ -1,19 +1,44 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { OnInit, Component, Input, Output, EventEmitter } from '@angular/core';
 import { ShopItem } from './model/shop-item';
+import { ItemService } from './services/item.service';
+import { Movie } from './model/movie';
+import { MovieService } from './services/movie.service';
+
+
 
 @Component({
   selector: 'my-app',
   templateUrl: `app/views/app.html`,
-  styleUrls: ['app/styles/app.css', 'app/styles/app.colors.css']
+  styleUrls: ['app/styles/app.css', 'app/styles/app.colors.css'],
+  providers: [ItemService, MovieService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-  public firstRowItems: Array<ShopItem> = [
-    new ShopItem(1, "Spada Laser", ["app/images/items/laser.jpg"], "Spada laser Star Wars: Il Risveglio della Forza, Rey", 35.99),
-    new ShopItem(2, "Caccia U-Wing", ["app/images/items/Astronave.png"], "Caccia U-Wing dei ribelli, Rogue One: A Star Wars Story", 28.99)];
+  public movies: Array<Movie>;
+  public showcases: Map<string, Array<ShopItem>> = new Map<string, Array<ShopItem>>();
+  public showcasesKeys: Array<string> = new Array<string>();
 
-  public secondRowItems: Array<ShopItem> = [
-    new ShopItem(3, "Maschera", ["app/images/items/Casco.png"], "Maschera soldato delle Truppe d'assalto del Primo Ordine", 19.99),
-    new ShopItem(4, "Felpa", ["app/images/items/Felpa.png"], "Felpa bimbo con cappuccio Death Trooper, Rogue One", 30.99)];
+  constructor(private itemService: ItemService, private movieService: MovieService) {
+    
+  }
+
+
+  ngOnInit(): void {
+    this.getMovies();
+    this.getShowcases();
+  }
+
+  getMovies(): void {
+    this.movies = this.movieService.getMovies();
+  }
+
+  getShowcases(): void {
+    this.movies.forEach(m => {
+      this.showcasesKeys.push(m.title);
+      this.showcases.set(m.title, this.itemService.showcaseByMovie(m.id));
+    });
+  }
+
+  
   
 }
