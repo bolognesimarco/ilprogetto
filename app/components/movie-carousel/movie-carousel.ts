@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output, ElementRef } from '@angular/core';
+import { Component, Input, EventEmitter, Output, ElementRef, OnInit } from '@angular/core';
 import { Movie } from '../../model/movie';
 import { MovieService } from '../../services/movie.service';
 
@@ -8,35 +8,20 @@ import { MovieService } from '../../services/movie.service';
   styleUrls: ['app/components/movie-carousel/movie-carousel.css', 'app/styles/app.colors.css'],
   providers: [MovieService]
 })
-export class MovieCarousel  {
+export class MovieCarousel implements OnInit {
 
-    public movies: Array<Movie> = this.movieService.getMovies();
-    public showTrailer = false;
-    constructor(private movieService: MovieService, private el: ElementRef) {
-        this.showDivs(0);
-    }
+    public movies: Array<Movie>;
     
-    public selectedIndex: number = 0;
-
-    public plusDivs(n: number) {
-        this.showDivs(this.selectedIndex += n);
+    constructor(private movieService: MovieService, private el: ElementRef) {
     }
 
-    public showDivs(n: number) {
-        
-        if (n >= this.movies.length) {
-            this.selectedIndex = 0;
-        } else if (n < 0) {
-            this.selectedIndex = this.movies.length - 1;
-        } else {
-            this.selectedIndex = n;
-        }
-        
+    ngOnInit(): void {
+        this.movies = this.movieService.getMovies();
     }
 
 
     public getUrl(index: number) {
-        if(window.innerWidth <= 1000) {
+        if(window.innerWidth <= 375) {
             return this.movies[index].imageV;
         } else {
             return this.movies[index].image;

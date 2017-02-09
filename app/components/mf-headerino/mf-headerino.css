@@ -1,0 +1,15 @@
+.headerino {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c9e4ec;
+    height: 30px;
+    font-size: 11px;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerino {
+    display: none;
+  }
+}

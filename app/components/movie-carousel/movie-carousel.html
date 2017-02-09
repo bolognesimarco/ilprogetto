@@ -1,20 +1,24 @@
-<div class="mf-container">
-
-    <div class="w3-content w3-display-container">
-
-        <a class="w3-btn-floating w3-hover-dark-grey w3-display-left" (click)="plusDivs(-1)">&#10094;</a>
-        <a class="w3-btn-floating w3-hover-dark-grey w3-display-right" (click)="plusDivs(1)">&#10095;</a>
-
-        <div *ngFor="let m of movies; let i=index;" class="w3-display-container" [style.display]="selectedIndex==i && 'block' || 'none'">
-            <!--<button data-toggle="modal" (click)="openTrailer(getVideoUrl(i))" data-target="#trailermodal" data-movieurl="getVideoUrl(i)" type="button" class="btn">-->
-                <img [src]="getUrl(i)" style="width: 100%;" >
-            <!--</button>-->
-        </div>
-
-
-
+<div id="mf-movie-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li *ngFor="let m of movies; let i = index;" data-target="#mf-movie-carousel" [attr.data-slide-to]="i" [class]="i==0 ? 'active':'nothing'"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div *ngFor="let m of movies; let i = index;" [class]="i==0 ? 'item active' : 'item'">
+      <img [src]="getUrl(i)" [alt]="m.title">
+      <div class="carousel-caption">
+        <span>{{m.title}}</span>
+      </div>
     </div>
-
-
-
-</div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#mf-movie-carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#mf-movie-carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->

@@ -1,0 +1,15 @@
+.navbar {
+  background-color: white;
+  border: none;
+  border-top: solid 1px lightsteelblue;
+  border-bottom: solid 1px lightsteelblue;
+}
+
+.navbar-toggle {
+  margin-left: 15px;
+}
+
+.dropdown-toggle, .dropdown-menu {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

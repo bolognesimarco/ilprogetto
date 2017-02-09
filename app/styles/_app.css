@@ -1,39 +1,13 @@
-
-.mf-main-page {
-    width: 1024px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: white;
-}
-
-
-@media only screen and (max-width: 1024px) {
-    .mf-main-page {
-        width: 100%;
-    }
-}
-
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-
-
 .row{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
+.main-page {
+    width: 1000px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .header-container {
     border-bottom: solid 1px lightsteelblue;
@@ -126,4 +100,4 @@
         font-size: smaller;
     }
     
-}*/
+}
