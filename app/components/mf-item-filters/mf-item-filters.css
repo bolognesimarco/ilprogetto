@@ -1,8 +1,114 @@
-.item-filters {
+.retro {
+  border: solid 1px lightsteelblue;
+  background-image: url('app/images/logo_bigl_visit.png');
+  background-repeat: no-repeat;
+  width: 371px;
+  height: 238px;
+  padding: 0;
 }
 
-@media only screen and (max-width: 1024px) {
-  .item-filters {
-    display: none;
-  }
+.frontex {
+  border: solid 1px lightsteelblue;
+  /*background-image: url('app/images/logo_bigl_visit.png');
+  background-repeat: no-repeat;
+  opacity: 0.5;*/
+  width: 371px;
+  height: 238px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+.avatar-nomecognome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 40px;
+  background-color: cadetblue;
+  margin-top: 5px;
+}
+
+.avatar-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 40px;
+  background-color: lightblue;
+  margin-top: 5px;
+}
+
+.avatar-email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 40px;
+  background-color: dodgerblue;
+  margin-top: 5px;
+}
+
+.avatar {
+  font-size: 30px;
+  color: white;
+  background-color: orange;
+  margin-left: 2px;
+}
+
+.phone {
+  font-size: 39px;
+  color: white;
+  background-color: crimson;
+}
+
+.envelope {
+  font-size: 39px;
+  color: white;
+  background-color: greenyellow;
+}
+
+.nomecognome {
+  color: white;
+  padding-top: 3px;
+  font-weight: bold;
+}
+
+.socialrow {
+  padding-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+.fronte {
+    border: solid 1px lightsteelblue;
+    /*background-image: url('app/images/logo_bigl_visit.png');
+    background-repeat: no-repeat;
+    opacity: 0.5;*/
+    width: 371px;
+    height: 238px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.fronte:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('app/images/logo_bigl_visit.png') center center;
+    opacity: .4;
 }
